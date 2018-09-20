@@ -11,14 +11,14 @@
 <body id="BodyColor">
     <div class="container">
         @{
-            ViewData ["Title"] = "À propos de nous";
+            ViewData["Title"] = "À propos de nous";
         }
         <h2 id="TitlePage">@ViewData["Title"]</h2>
         <h3>@ViewData["Message"]</h3>
 
-        <section class="col-lg-12">
+        <section class="col-sm-12">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-sm-8">
                     <p>
                         Depuis les années 90, le projet d’une petite clinique est dans la tête de notre Directeur
                         générale Grégory House. Le projet pris forme dans le 26 février 2000 avec l’aide financière
@@ -31,9 +31,30 @@
 
                     </p>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-sm-4">
                     <img id="EvolutionIMG" src="~/images/Img/0_big.jpg" alt="Évolution de la clientèle" />
 
+                </div>
+            </div>
+            <div id="A" class="row">
+                <div class="col-sm-6">
+                    <img id="PeopleIMG" src="~/images/Img/patient.jpg" alt="Notre Clinique" />
+
+                </div>
+                <div class="col-sm-6">
+                    <br>
+
+                    <p>
+                        Les nouveaux médecins sont formé pour des soins humains et vise la qualité des traitements.
+                        Les médecins afflux de partout dans la province pour travailler dans un climat qui vise les
+                        soins et non pas un quota de patients dans la journée. Les ressources pour les patients et le
+                        suivi est <b>hors du commun.</b>
+                        <br />
+                        <br />
+                        <b id="Sentence">
+                            Devenir patient ici est un pas de plus vers la santé!
+                        </b>
+                    </p>
                 </div>
 
 
