@@ -1,0 +1,17 @@
+﻿#BodyColor {
+    background-color: lightgray;
+}
+
+#EvolutionIMG {
+    border-radius: 8px;
+    border: solid 5px hidden;
+    width: 300px;
+    height: 200px;
+   
+  
+}
+
+#TitlePage {
+
+color: #4cab50; 
+}

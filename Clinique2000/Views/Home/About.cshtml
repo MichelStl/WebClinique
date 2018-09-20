@@ -1,7 +1,62 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="RL,PAH,MSL">
+    <meta name="keywords" content="Propos, projet, pilote, Clinique2000">
+    <meta name="description" content="La création de notre clinique et son développement." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/css/RLStyle.css" rel="stylesheet" />
+    <title> Clinique 2000- À propos nous</title>
+</head>
+<body id="BodyColor">
+    <div class="container">
+        @{
+            ViewData ["Title"] = "À propos de nous";
+        }
+        <h2 id="TitlePage">@ViewData["Title"]</h2>
+        <h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+        <section class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>
+                        Depuis les années 90, le projet d’une petite clinique est dans la tête de notre Directeur
+                        générale Grégory House. Le projet pris forme dans le 26 février 2000 avec l’aide financière
+                        du gouvernement fédéral et le gouvernement provincial à la hauteur de 2 millions de dollars.
+                        <br />
+                        <br />
+                        Le projet pilote devenu permanent en 2008 quand la clinique ouvra trois bâtiments supplémentaires dans la
+                        ville de Saint-Hyacinthe. La clinique fût renommée et accréditée pour les centres universitaires.
+
+
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <img id="EvolutionIMG" src="~/images/Img/0_big.jpg" alt="Évolution de la clientèle" />
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </section>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

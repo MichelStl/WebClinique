@@ -17,7 +17,7 @@ namespace Clinique2000.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = " Un projet humain, pour des soins humains";
 
             return View();
         }
