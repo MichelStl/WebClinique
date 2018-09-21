@@ -40,7 +40,8 @@ body {
 html,
 body {
     height: 100%;
-    padding-top: 0px;
+    padding-top: 
+        0px;
 }
 .masthead {
     background-image:url("../images/Img/exterieur.jpg");
