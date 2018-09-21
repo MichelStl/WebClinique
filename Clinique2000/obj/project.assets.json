@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Développement app web\\TP1\\Clinique2000\\WebClinique\\Clinique2000\\Clinique2000.csproj",
+      "projectUniqueName": "D:\\Développement app web\\TP1\\Clinique2000\\WebClinique\\WebClinique\\Clinique2000\\Clinique2000.csproj",
       "projectName": "Clinique2000",
-      "projectPath": "D:\\Développement app web\\TP1\\Clinique2000\\WebClinique\\Clinique2000\\Clinique2000.csproj",
+      "projectPath": "D:\\Développement app web\\TP1\\Clinique2000\\WebClinique\\WebClinique\\Clinique2000\\Clinique2000.csproj",
       "packagesPath": "C:\\Users\\mike_\\.nuget\\packages\\",
-      "outputPath": "D:\\Développement app web\\TP1\\Clinique2000\\WebClinique\\Clinique2000\\obj\\",
+      "outputPath": "D:\\Développement app web\\TP1\\Clinique2000\\WebClinique\\WebClinique\\Clinique2000\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

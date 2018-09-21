@@ -1,0 +1,80 @@
+﻿
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="RL,PAH,MSL">
+    <meta name="keywords" content="information medecin, projet, pilote, Clinique2000">
+    <meta name="description" content="La création de notre clinique et son développement." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/css/RLStyle.css" rel="stylesheet" />
+    <title> Clinique 2000- info medecin</title>
+</head>
+@model Clinique2000.Models.medecin
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Informations</h2>
+<body id="BodyColor">
+    <div>
+        <h4>Informations du médecin</h4>
+        <img src="~/images/Img/dossier2.jpg" alt="image introuvable" />
+        <hr />
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nom)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nom)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Prenom)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Adresse)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Adresse)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Telephone)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Telephone)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CodePostal)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CodePostal)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Sexe)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Sexe)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Note)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+        </dl>
+    </div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.MedecinID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>

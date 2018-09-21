@@ -1,0 +1,17 @@
+﻿.headLogo{
+    width:100%;
+}
+.headTitle{
+    width:100%;
+}
+.imgIndex {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+.topad{
+    padding-top:30px;
+}
+.topad2 {
+    padding-top: 70px;
+}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Clinique2000.Models;
 
 namespace Clinique2000.Data
 {
@@ -12,5 +13,7 @@ namespace Clinique2000.Data
             : base(options)
         {
         }
+        public DbSet<Clinique2000.Models.medecin> medecin { get; set; }
+        public DbSet<Clinique2000.Models.patient> patient { get; set; }
     }
 }
