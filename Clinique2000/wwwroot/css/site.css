@@ -1,7 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    min-height: 120em;
     padding-bottom: 20px;
     background-color: lightgray;
 }
@@ -36,158 +36,36 @@ body {
         display: none;
     }
 }
-/*---------------------------------------------------------*/
-html,
-body {
-    height: 100%;
-    padding-top: 
-        0px;
-}
-.masthead {
-    background-image:url("../images/Img/exterieur.jpg");
-    background-repeat:no-repeat;
-}
-.row {
-    margin-left: 0px;
-    margin-right: 0px;
+/* Style de la navbar------------- */
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+    z-index: 999;
 }
 
-/* Wrapper for page content to push down footer */
-#wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    /* Negative indent footer by its height */
-    margin: 0 auto -60px;
-    /* Pad bottom by footer height */
-    padding: 0 0 60px;
-}
-
-/* Set the fixed height of the footer here */
-#footer {
-    height: 60px;
-    background-color: #f5f5f5;
-    margin-top: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-header {
-    height: 100%; /*-----------------------------------------------------rem*/
-    min-height: 540px;
-}
-
-#wrap > .container {
-    padding: 60px 15px 0;
-}
-
-.container .credit {
-    margin: 20px 0;
-}
-
-#footer {
-    background-color: #414141;
-}
-
-    #footer a {
-        color: #efefef;
+    /* Navbar links */
+    #navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
     }
 
-#topNav {
-    z-index: -1;
+/* Page content */
+.content {
+    padding: 16px;
 }
 
-#nav {
-    width: 100%;
-    position: static;
-    top: -32px;
-}
-
-    #nav.affix {
-        position: fixed;
-        top: 0;
-        z-index: 10;
-        -webkit-transition: all .6s ease-in-out;
-    }
-
-#footer > .container {
-}
-
-@media (min-width: 767px) {
-    .navbar-nav.nav-justified > li {
-        float: none;
-    }
-}
-
-.navbar-nav {
-    margin: 1px 1px;
-}
-
-/* customize nav style */
-.navbar-custom {
-    background-color: #2e2e2e;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-width: 0;
-}
-
-    .navbar-custom .navbar-nav > li > a {
-        color: #ddd;
-    }
-
-    .navbar-custom .dropdown-menu li > a:hover {
-        color: #eee;
-    }
-
-    .navbar-custom .navbar-nav li > a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a {
-        background-color: #000;
-    }
-
-    .navbar-custom .navbar-nav > .dropdown > a .caret {
-        border-top-color: #999;
-        border-bottom-color: #999;
-    }
-
-.navbar-collapse.in { /*3.0.2 bug workaround*/
-    overflow-y: visible;
-}
-
-.navbar-toggle {
-    outline: 0;
-}
-
-.divider {
-    height: 50px;
-}
-
-.panel {
-    border-width: 0;
-}
-
-@media (max-width: 768px) {
-    header {
-    }
-}
-
-.scroll-top {
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
     position: fixed;
-    bottom: 0;
-    right: 6%;
-    z-index: 100;
-    background: #f2f3f2;
-    font-size: 24px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    top: 0;
+    width: 100%;
 }
 
-    .scroll-top a:link, .scroll-top a:visited {
-        color: #222;
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky + .content {
+        padding-top: 60px;
     }
-
-section {
-    color: #ffffff;
-    min-height: 400px;
-    height: auto !important;
-    height: 100%;
-    padding-top: 100px;
-}

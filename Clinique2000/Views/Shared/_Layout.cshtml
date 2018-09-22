@@ -19,18 +19,14 @@
     </environment>
 </head>
 <body>
-    <header class="masthead">
-        <div class="row" >
-            <div style="text-align:center" class="col-md-4 col-sm-6 col-xs-4">
-                <img class="headLogo" src="~/images/Img/Logo2.png" />
-            </div>
-            <div style="text-align:center" class="headTitle col-md-8 col-sm-6 col-xs-8">
-                <img src="~/images/Img/name.png" />
-            </div>
-        </div>
+    <header>
+        <div style="text-align:center">
+            <img id="headTitle" src="~/images/Img/header4.png" />
 
+        </div>
     </header>
-    <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+    <nav id="navbar" class="navbar navbar-inverse ">
+
 
         <div class="container">
             <div class="navbar-header">
@@ -40,20 +36,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Clinique2000</a>
+               
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a></li>
+
                     <li><a asp-area="" asp-controller="Home" asp-action="About">À propos</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Pour nous joindre</a></li>
+
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
         </div>
 
-        </nav>
-    </div>
+    </nav>
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">

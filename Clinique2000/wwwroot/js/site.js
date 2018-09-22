@@ -3,23 +3,19 @@
 
 // Write your JavaScript code.
 /* affix the navbar after scroll below header */
-$('#nav').affix({
-    offset: {
-        top: $('header').height() - $('#nav').height()
+window.onscroll = function () { myFunction() };
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
     }
-});
-
-/* highlight the top nav as scrolling occurs */
-$('body').scrollspy({ target: '#nav' })
-
-/* smooth scrolling for scroll to top */
-$('.scroll-top').click(function () {
-    $('body,html').animate({ scrollTop: 0 }, 1000);
-})
-
-/* smooth scrolling for nav sections */
-$('#nav .navbar-nav li>a').click(function () {
-    var link = $(this).attr('href');
-    var posi = $(link).offset().top;
-    $('body,html').animate({ scrollTop: posi }, 700);
-});
+}
