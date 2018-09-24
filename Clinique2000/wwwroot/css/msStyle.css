@@ -21,3 +21,24 @@ header {
 .topad2 {
     padding-top: 70px;
 }
+@keyframes dimImages {
+    0% {
+        transform: scale(1,1);
+    }
+
+    100% {
+        z-index: 9;
+        transform: scale(1.1,1.1);
+    }
+}
+#dimentionImage:hover {
+    position: relative;
+    animation-name: dimImages;
+    animation-duration: 100ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-play-state: running;
+}
