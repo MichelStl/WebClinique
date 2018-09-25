@@ -10,8 +10,8 @@ header {
     width: 80%;
 }
 
-.imgIndex {
-    height: auto;
+.greenText {
+    color: #4cab50;
 }
 
 .topad {
@@ -29,6 +29,7 @@ header {
     100% {
         z-index: 9;
         transform: scale(1.1,1.1);
+        box-shadow: 5px 10px #4cab50;
     }
 }
 #dimentionImage:hover {
