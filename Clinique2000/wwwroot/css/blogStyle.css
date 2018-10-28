@@ -1,0 +1,22 @@
+﻿body {
+}
+.blueText {
+    color: #4039d6;
+}
+.backColorGreen {
+    background-color: #4cab50;
+    border-color: #4cab50;
+}
+.floatRight {
+    float: right;
+}
+.imgSize {
+    background-image:url("../images/Img/tablette.jpg");
+    background-size:50%;
+    background-repeat:no-repeat;
+    background-position:center;
+    padding-top:60px;
+}
+.articleImgSize{
+    width:80%;
+}

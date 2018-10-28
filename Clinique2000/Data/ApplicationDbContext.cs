@@ -15,5 +15,6 @@ namespace Clinique2000.Data
         }
         public DbSet<Clinique2000.Models.medecin> medecin { get; set; }
         public DbSet<Clinique2000.Models.patient> patient { get; set; }
+        public DbSet<Clinique2000.Models.Post> Post { get; set; }
     }
 }

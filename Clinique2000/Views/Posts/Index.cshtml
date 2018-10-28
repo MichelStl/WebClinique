@@ -1,0 +1,61 @@
+﻿
+
+@model IEnumerable<Clinique2000.Models.Post>
+
+@{
+    ViewData["Title"] = "Blogue santé";
+}
+<div class="row ">
+    <div class="row ">
+        <div class="col-md-12">
+            <h2 class="greenText">Blogue santé</h2>
+        </div>
+    </div>
+    <div class="row imgSize">
+        <div class="col-md-12">
+            <button class="btn btn-primary" asp-action="Create">Nouveau</button>
+        </div>
+        
+    </div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OverView)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ReleaseDate)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OverView)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReleaseDate)
+                    </td>
+
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.PostId">Lire</a> |
+                        <a asp-action="Edit" asp-route-id="@item.PostId">Modifier</a> |
+                        <a asp-action="Delete" asp-route-id="@item.PostId">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
