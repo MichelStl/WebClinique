@@ -1,12 +1,12 @@
 ﻿@model Clinique2000.Models.Post
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Modification";
 }
 
-<h2>Edit</h2>
+<h2 class="greenText">Modification</h2>
 
-<h4>Post</h4>
+<h4 class="blueText">@Html.DisplayFor(model => model.Title)</h4>
 <hr />
 <div class="row">
 
@@ -26,7 +26,7 @@
                 <span asp-validation-for="OverView" class="text-danger"></span>
             </div>
             <div class="input-group">
-                <input type="file" name="file" />
+                <input class="btn btn-primary" type="file" name="file" />
                 <br />
             </div>
             <img src="@ViewData["FilePath"]" />
@@ -45,7 +45,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Sauvegarder" class="btn btn-default" />
+                <input type="submit" value="Sauvegarder" class="btn btn-primary" />
             </div>
         </div>
 

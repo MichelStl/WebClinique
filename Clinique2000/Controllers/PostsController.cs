@@ -24,9 +24,35 @@ namespace Clinique2000.Controllers
         }
 
         // GET: Posts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string search)
         {
-            return View(await _context.Post.ToListAsync());
+            List<Post> postsVM = new List<Post>();
+            if (search != null)
+            {
+                var foundPost = _context.Post.Where(p => p.Title.ToUpper().Contains(search.ToUpper())).ToList();
+                foreach (var post in foundPost)
+                {
+                    postsVM.Add(new Post
+                    {
+                        Title = post.Title,
+                        OverView = post.OverView,
+                        ReleaseDate = post.ReleaseDate
+                    });
+                }
+                return View(postsVM);
+            }
+            else
+                foreach (var post in _context.Post)
+                {
+                    postsVM.Add(new Post
+                    {
+                        Title = post.Title,
+                        OverView = post.OverView,
+                        ReleaseDate = post.ReleaseDate
+                    });
+                }
+            return View(_context.Post);
+            //return View(await _context.Post.ToListAsync());
         }
 
         // GET: Posts/Details/5

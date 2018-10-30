@@ -17,6 +17,10 @@
     background-position:center;
     padding-top:60px;
 }
+
+.redText{
+    color:red;
+}
 .articleImgSize{
     width:80%;
 }

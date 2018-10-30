@@ -1,6 +1,10 @@
 ﻿#BodyColor {
     background-color: lightgray;
 }
+.medecinImg {
+    width: 40%;
+    position: center;
+}
 
 #EvolutionIMG {
     border-radius: 8px;

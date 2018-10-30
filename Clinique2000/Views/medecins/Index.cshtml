@@ -10,80 +10,94 @@
 @model IEnumerable<Clinique2000.Models.medecin>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Les médecins";
 }
-<body id="BodyColor">
-    <img src="~/images/Img/accueil.jpg" alt="Alternate Text" />
-    <h2>Liste des médecins</h2>
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nom)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Prenom)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Adresse)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Telephone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CodePostal)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Sexe)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Note)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nom)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Prenom)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Adresse)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Telephone)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CodePostal)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Sexe)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Note)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.MedecinID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.MedecinID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.MedecinID">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<body id="BodyColor">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="greenText">Liste des médecins</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-2"></div>
+            <div class="col-md-6 col-xs-8">
+                <img class="medecinImg" style="width:90%" src="~/images/Img/accueil.jpg" />
+            </div>
+            <div class="col-md-3 col-xs-2"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <a class="btn btn-primary" asp-action="Create">Nouveau</a>
+
+                <table align="right" width="300" height="50">
+                    <tr>
+                        <td>
+                            <form asp-action="Index" method="post">
+                                <div class="row input-group">
+                                    <input type="text" name="search" id="search" class="form-control" size="200" />
+                                    <div class="row input-group-btn">
+                                        <input type="submit" class="btn btn-primary" value="Search" />
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Prenom)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Telephone)
+                            </th>
+
+
+
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Prenom)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Telephone)
+                                </td>
+
+
+                                <td>
+                                    <a class="btn btn-success" asp-action="Details" asp-route-id="@item.MedecinID">Détails</a>
+                                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.MedecinID">modifier</a>
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.MedecinID">Supprimer</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>

@@ -20,9 +20,36 @@ namespace Clinique2000.Controllers
         }
 
         // GET: medecins
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string search)
         {
-            return View(await _context.medecin.ToListAsync());
+            List<medecin> medecinVM = new List<medecin>();
+            if (search != null)
+            {
+                var foundMedecin = _context.medecin.Where(m => m.Nom.ToUpper().Contains(search.ToUpper()) || m.Prenom.ToUpper().Contains(search.ToUpper())).ToList();
+                foreach (var m in foundMedecin)
+                {
+                    medecinVM.Add(new medecin
+                    {
+                        Nom = m.Nom,
+                        Prenom = m.Prenom,
+                        Telephone = m.Telephone
+                    });
+                }
+                return View(medecinVM);
+            }
+            else
+                foreach (var m in _context.medecin)
+                {
+                    medecinVM.Add(new medecin
+
+                    {
+                        Nom = m.Nom,
+                        Prenom = m.Prenom,
+                        Telephone = m.Telephone
+                    });
+                }
+            return View(_context.medecin);
+            //return View(await _context.medecin.ToListAsync());
         }
 
         // GET: medecins/Details/5

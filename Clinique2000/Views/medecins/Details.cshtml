@@ -11,70 +11,95 @@
 @model Clinique2000.Models.medecin
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Dossier du médecin";
 }
 
-<h2>Informations</h2>
+
 <body id="BodyColor">
-    <div>
-        <h4>Informations du médecin</h4>
-        <img src="~/images/Img/dossier2.jpg" alt="image introuvable" />
-        <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="greenText">Informations</h2>
+                <h4 class="blueText">Dossier du médecin</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-xs-2"></div>
+                <div class="col-md-6 col-xs-8">
+                    <img src="~/images/Img/dossier2.jpg" style="width:80%; float:right" alt="image introuvable" />
 
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nom)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Nom)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Prenom)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Prenom)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Adresse)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Adresse)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Telephone)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Telephone)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.CodePostal)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.CodePostal)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Sexe)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Sexe)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Note)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Note)
-            </dd>
-        </dl>
-    </div>
+                </div>
+                <div class="col-md-3 col-xs-2"></div>
 
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.MedecinID">Edit</a> |
-        <a asp-action="Index">Back to List</a>
-    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="blueText">Dr.@Html.DisplayFor(model => model.Prenom) @Html.DisplayFor(model => model.Nom) </h4>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4 col-sm-3">
+                    <label>
+                        @Html.DisplayNameFor(model => model.Nom)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.Nom)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(model => model.Prenom)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.Prenom)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(model => model.Adresse)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.Adresse)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(model => model.CodePostal)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.CodePostal)
+                    </p>
+                    
+                </div>
+
+                <div class="col-md-4 col-sm-3">
+                    <label>
+                        @Html.DisplayNameFor(model => model.Telephone)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.Telephone)
+                    </p>
+
+                    <label>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.Email)
+                    </p>
+                    <label>
+                        @Html.DisplayNameFor(model => model.Sexe)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.Sexe)
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <label>
+                        @Html.DisplayNameFor(model => model.Note)
+                    </label>
+                    <p>
+                        @Html.DisplayFor(model => model.Note)
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.MedecinID">Modifier</a> 
+            <a class="btn btn-success" asp-action="Index">Retour à la liste</a>
+        </div>
 </body>
