@@ -16,13 +16,13 @@ namespace Clinique2000.Models
         [DisplayName("Articles")]
         public string Title { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
-        [Required, StringLength(60, MinimumLength = 6)]
+        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [Required, StringLength(160, MinimumLength = 6)]
         [DisplayName("Aperçus")]
         public string OverView { get; set; }
 
         [Required]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         public string Content { get; set; }
 
         [DataType(DataType.Date)]
