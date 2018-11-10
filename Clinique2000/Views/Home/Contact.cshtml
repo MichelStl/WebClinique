@@ -1,4 +1,6 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,7 +25,7 @@
 
         <div class="col-sm-4">
             <p>
-                Adresse:
+                @Localizer["Adresse:"]
                 <br />
                 Clinique 2000 Choquette
                 <br />
@@ -35,7 +37,7 @@
             </p>
             <br>
             <p>
-                Adresse:
+                @Localizer["Adresse:"]
                 <br />
                 Clinique 2000 Giard
                 <br />
@@ -48,7 +50,7 @@
             </p>
             <br>
             <p>
-                Adresse:
+                @Localizer["Adresse:"]
                 <br />
                 Clinique 2000 Dessaules
                 <br />
@@ -61,7 +63,7 @@
             </p>
             <br>
             <p>
-                Adresse:
+                @Localizer["Adresse:"]
                 <br />
                 Clinique 2000 Dunemil
                 <br />
@@ -77,49 +79,49 @@
         <div class="col-sm-4">
 
             <p>
-                Les équipes des cliniques 2000 vous attendent avec impatience 7 jours sur 7 sur heures d'ouverture.
-                Nous sommes situé à Saint-Hyacinthe, en Montérégie, situé entre Québec et Montréal, proche de l'autoroute
-                20.
+                @Localizer["Les équipes des cliniques 2000 vous attendent avec impatience 7 jours sur 7 sur heures d'ouverture. Nous sommes situé à Saint-Hyacinthe, en Montérégie, situé entre Québec et Montréal, proche de l'autoroute 20."]
+                
+
             </p>
             <br />
             <p>
                 <table>
                     <tr>
-                        <th>Heure d'ouverture</th>
+                        <th>@Localizer["Heure d'ouverture"]</th>
 
                     </tr>
                     <tr>
-                        <td>Lundi</td>
+                        <td>@Localizer["Lundi"]</td>
                         <td>5:00am - 23:00 pm</td>
 
                     </tr>
                     <tr>
-                        <td>Mardi</td>
+                        <td>@Localizer["Mardi"]</td>
                         <td>5:00am - 23:00 pm</td>
 
                     </tr>
                     <tr>
-                        <td>Mercredi</td>
+                        <td>@Localizer["Mercredi"]</td>
                         <td>5:00am - 23:00 pm</td>
 
                     </tr>
                     <tr>
-                        <td>Jeudi</td>
+                        <td>@Localizer["Jeudi"]</td>
                         <td>5:00am - 23:00 pm</td>
 
                     </tr>
                     <tr>
-                        <td>Vendredi</td>
+                        <td>@Localizer["Vendredi"]</td>
                         <td>8:00am - 22:00 pm</td>
 
                     </tr>
                     <tr>
-                        <td>Samedi</td>
+                        <td>@Localizer["Samedi"]</td>
                         <td>8:00am - 20:00 pm</td>
 
                     </tr>
                     <tr>
-                        <td>Dimanche</td>
+                        <td>@Localizer["Dimanche"]</td>
                         <td>9:00am - 18:00 pm</td>
 
                     </tr>
@@ -129,15 +131,15 @@
             </p>
             <br />
             <p>
-                Coordonnées
+                @Localizer["Coordonnées"]
                 <br />
-                Téléphone maison mère : 450-771-BOBO
+                @Localizer["Téléphone maison mère"]: 450-771-BOBO
                 <br />
-                Télécopieur : 450-771-RAMQ
+                @Localizer["Télécopieur"] : 450-771-RAMQ
                 <br />
-                Courriel : Clinique2000@House.ca
+                @Localizer["Courriel"] : Clinique2000@House.ca
                 <br />
-                Web : www.clinique2000.com
+                @Localizer["Site internet"] : www.clinique2000.com
             </p>
             <br />
 
@@ -145,7 +147,7 @@
         </div>
         <div class="col-sm-4">
             <img id="Imgx" src="~/images/Img/exterieur.jpg" alt="Alternate Text" />
-            <img id="Imgx" src="~/images/Img/exterieur2.jpg" Alternate Text" />
+            <img id="Imgx" src="~/images/Img/exterieur2.jpg" alt="Alternate Text" />
             <img id="Imgx" src="~/images/Img/exterieur3.jpg" alt="Alternate Text" />
             <img id="Imgx" src="~/images/Img/exterieur4.jpg" alt="Alternate Text" />
 
@@ -154,8 +156,8 @@
     </div>
     <form asp-controller="Home" asp-action="Download" method="get"
           enctype="multipart/form-data">
-<button class="btn btn-success" >Télécharger cette page</button>
-</form>
+        <button class="btn btn-success">@Localizer["Télécharger cette page"]</button>
+    </form>
 
 </body>
 </html>

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Clinique2000.Models;
 using System.IO;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
 
 namespace Clinique2000.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
@@ -18,7 +21,8 @@ namespace Clinique2000.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = " Un projet humain, pour des soins humains";
+
+            
 
             return View();
         }
@@ -88,6 +92,15 @@ namespace Clinique2000.Controllers
                 {".gif", "image/gif"},
                 {".csv", "text/csv"}
             };
+        }
+        [HttpPost]
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) });
+            return LocalRedirect(returnUrl);
         }
     }
 }

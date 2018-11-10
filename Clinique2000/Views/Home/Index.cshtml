@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
     ViewData["Title"] = "Home Page";
 }
 <head>
@@ -14,7 +16,7 @@
 <div class="container">
     <div class="row topad">
         <div class="col-md-3 col-sm-3 col-xs-3 imgindex ">
-            <a asp-area="" asp-controller="Home" asp-action="Contact"><img  id="dimentionImage" src="~/images/Img/ext4.jpg" /></a>
+            <a asp-area="" asp-controller="Home" asp-action="Contact"><img id="dimentionImage" src="~/images/Img/ext4.jpg" /></a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-3 imgindex">
             <a asp-area="" asp-controller="Home" asp-action="Contact"><img id="dimentionImage" src="~/images/Img/ext3.jpg" /></a>
@@ -31,29 +33,23 @@
     </div>
     <div class="row">
         <div class="col-md-8 ">
-            <h2 class="greenText">Bienvenue</h2>
+            <h2 class="greenText">@Localizer["Bienvenue"]</h2>
             <p>
-                Le projet de la clinique 2000 fût mon projet pilotes démarré au début des années 2000 et
-                a été créée afin de permettre aux Patients et patientes
-                ayant des problèmes de santé d'être traités humainement, avec respect et la plus grande attention par
-                des personnes qualifiées
-
-                Depuis 2008, la Clinique 2000 a pris de l’expansion pour devenir 4 grandes Clinique
-                ayant une unité de médecine familiale ainsi qu’une clinique d’urgence et plusieurs autres
-                départements de santé physique. Les cliniques détiennent actuellement les technologies
-                les plus à la pointe et sont partenaires de plusieurs centres universitaires tel que
-                l’université de Sherbrooke et de l’université de Montréal.
-                Les cliniques fonctionnent actuellement par prise de rendez-vous téléphonique(Lien)
-                ou par E-mail(Lien). Nos secrétaires vous confirmeront votre Rendez-vous avec un de
-                nos médecins. Pour un rendez-vous la clinique d’urgence, veuillez appeler à
-                la ligne d’urgence ou une infirmière vous répondra et vous évaluera pour être sûre de
-                l’urgence et votre sécurité.
-
+                <span class="marge">@Localizer["Le projet de la clinique 2000 fût mon projet pilotes démarré au début des années 2000 et a été créée afin de permettre aux Patients et patientes ayant des problèmes de santé d’être traités humainement, avec respect et la plus grande attention par des personnes qualifiées"]</span>
+                <br />
+                <br />
+                <span class="marge">@Localizer["Depuis 2008, la Clinique 2000 a pris de l’expansion pour devenir 4 grandes Clinique ayant une unité de médecine familiale ainsi qu’une clinique d’urgence et plusieurs autres départements de santé physique."]</span>
+                @Localizer["Les cliniques détiennent actuellement les technologies  les plus à la pointe et sont partenaires de plusieurs centres universitaires tel que l’université de Sherbrooke et de l’université de Montréal."]
+                @Localizer["Les cliniques fonctionnent actuellement par prise de"]
+                <a asp-area="" asp-controller="Home" asp-action="Contact" class="greenText">
+                    @Localizer["rendez-vous téléphonique ou par E-mail."]
+                </a> @Localizer["Nos secrétaires vous confirmeront votre Rendez-vous avec un de nos médecins."]
+                @Localizer["Pour un rendez-vous la clinique d’urgence, veuillez appeler à la ligne d’urgence ou une infirmière vous répondra et vous évaluera pour être sûre de l’urgence et votre sécurité."]
             </p>
         </div>
         <div class="col-md-4 ">
             <img src="~/images/Img/doc.png" />
         </div>
     </div>
-    
+
 </div>

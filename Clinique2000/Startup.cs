@@ -12,6 +12,10 @@ using Microsoft.EntityFrameworkCore;
 using Clinique2000.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Razor;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace Clinique2000
 {
@@ -40,6 +44,27 @@ namespace Clinique2000
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+            services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, options =>
+                {
+                    options.ResourcesPath = "Resources";
+                }).AddDataAnnotationsLocalization();
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new List<CultureInfo>
+                {
+                    new CultureInfo("en"),
+                    new CultureInfo("fr"),
+                };
+                options.DefaultRequestCulture = new RequestCulture("en");
+
+                options.SupportedCultures = supportedCultures;
+
+                options.SupportedUICultures = supportedCultures;
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -56,7 +81,10 @@ namespace Clinique2000
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
+            app.UseStaticFiles();
+            var options = app.ApplicationServices
+                .GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(options.Value);
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> options
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = options.Value.SupportedUICultures
+        .Select(c => new SelectListItem
+        {
+            Value = c.Name,
+            Text = c.DisplayName
+        }).ToList(); }
+
+<div>
+    <form id="SelectLanguage"  asp-controller="Home" asp-action="SetLanguage"
+          asp-route-returnUrl="@Context.Request.Path" method="post" class="form-horizontal blueText" role="form" style="float:right">
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="radio" value="en" name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems" onchange="this.form.submit()" />English
+            </div>
+            </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="radio" value="fr" name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems" onchange="this.form.submit()" />Francais
+                    </div>
+                </div>
+
+</form>
+</div>
+
+
+

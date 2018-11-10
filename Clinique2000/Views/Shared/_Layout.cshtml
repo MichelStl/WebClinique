@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="~/css/msStyle.css" />
         <link rel="stylesheet" href="~/css/blogStyle.css" />
         <link rel="stylesheet" href="~/css/body.css" />
+        <link rel="stylesheet" href="~/css/textFormat.css" />
+
 
 
         <link rel="icon" type="Logo_icon/ico" href="~/Images/Img/Logo.png" />
@@ -24,6 +26,8 @@
     </environment>
 </head>
 <body>
+    @using Microsoft.AspNetCore.Mvc.Localization
+    @inject IViewLocalizer Localizer
     <header>
         <div style="text-align:center">
             <img id="headTitle" src="~/images/Img/header4.png" />
@@ -45,21 +49,22 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Accueil</a></li>
-                    <li><a asp-area="" asp-controller="Posts" asp-action="Index">Blogue</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Accueil"]</a></li>
+                    <li><a asp-area="" asp-controller="Posts" asp-action="Index">@Localizer["Blogue"]</a></li>
 
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">À propos</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Pour nous joindre</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">@Localizer["À propos"]</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">@Localizer["Pour nous joindre"]</a></li>
                     <li>
-                        @if ( User.IsInRole(""))
+                        @if (User.IsInRole(""))
                         {
-                            
+
                             <a asp-area="" asp-controller="Home" asp-action="Contact">Pour nous joindre</a>
 
                         }
                     </li>
 
                 </ul>
+               
                 <partial name="_LoginPartial" />
             </div>
         </div>
@@ -71,7 +76,15 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - Clinique2000</p>
+            <div class="row">
+                <div class="col-md-6">
+                    
+                    <p>&copy; 2018 - Clinique2000</p>
+                </div>
+                <div class="col-md-6">
+                    <partial name="_SelectLanguagePartial" />
+                </div>
+            </div>
         </footer>
     </div>
 

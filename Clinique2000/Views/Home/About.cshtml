@@ -6,26 +6,31 @@
     <meta name="description" content="La création de notre clinique et son développement." />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="~/css/RLStyle.css" rel="stylesheet" />
-    <title> Clinique 2000- À propos nous</title>
+   
 </head>
 <body id="BodyColor">
     <div class="container">
+        @using Microsoft.AspNetCore.Mvc.Localization
+        @inject IViewLocalizer Localizer
+
         @{
-            ViewData["Title"] = "À propos de nous";
+            ViewData["Title"] = Localizer["À propos de nous"];
         }
         <h2 id="TitlePage">@ViewData["Title"]</h2>
-        <h3>@ViewData["Message"]</h3>
+        <h3>
+            @Localizer["Un projet humain, pour des soins humains!"]</h3>
 
             <div class="row">
                 <div class="col-sm-8">
                     <p>
-                        Depuis les années 90, le projet d’une petite clinique est dans la tête de notre Directeur
-                        générale Grégory House. Le projet pris forme dans le 26 février 2000 avec l’aide financière
-                        du gouvernement fédéral et le gouvernement provincial à la hauteur de 2 millions de dollars.
+                        @Localizer["Depuis les années 90, le projet d’une petite clinique est dans la tête de notre Directeur générale Grégory House. Le projet pris forme dans le 26 février 2000 avec l’aide financière  du gouvernement fédéral et le gouvernement provincial à la hauteur de 2 millions de dollars."]
+
+
                         <br />
                         <br />
-                        Le projet pilote devenu permanent en 2008 quand la clinique ouvra trois bâtiments supplémentaires dans la
-                        ville de Saint-Hyacinthe. La clinique fût renommée et accréditée pour les centres universitaires.
+                        @Localizer["Le projet pilote devenu permanent en 2008 quand la clinique ouvra trois bâtiments supplémentaires dans la ville de Saint-Hyacinthe. La clinique fût renommée et accréditée pour les centres universitaires."]
+
+
 
 
                     </p>
@@ -44,14 +49,12 @@
                     <br>
 
                     <p>
-                        Les nouveaux médecins sont formé pour des soins humains et vise la qualité des traitements.
-                        Les médecins afflux de partout dans la province pour travailler dans un climat qui vise les
-                        soins et non pas un quota de patients dans la journée. Les ressources pour les patients et le
-                        suivi est <b>hors du commun.</b>
+                        @Localizer["Les nouveaux médecins sont formé pour des soins humains et vise la qualité des traitements. Les médecins afflux de partout dans la province pour travailler dans un climat qui vise les  soins et non pas un quota de patients dans la journée. Les ressources pour les patients et le suivi est"]
+                        <b>@Localizer["hors du commun."]</b>
                         <br />
                         <br />
                         <b id="Sentence">
-                            Devenir patient ici est un pas de plus vers la santé!
+                            @Localizer["Devenir patient ici est un pas de plus vers la santé!"]
                         </b>
                     </p>
                 </div>
@@ -61,7 +64,7 @@
 
 
 
-    </div>
+</div>
 
 </body>
 </html>
